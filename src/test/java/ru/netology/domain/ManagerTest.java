@@ -45,7 +45,7 @@ class ManagerTest {
         assertArrayEquals(expected, actual);
     }
     @Test
-    void ShouldSearchByNotExistedValue() {
+    void ShouldNotSearchByNotExistedValue() {
         Product[] actual = manager.searchBy("@9999");
         Product[] expected = {};
         assertArrayEquals(expected, actual);
