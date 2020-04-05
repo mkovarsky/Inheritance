@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class Smartphone extends Product{
+public class Smartphone extends Product {
 
     private String manufacturer;
 
