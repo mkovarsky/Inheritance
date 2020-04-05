@@ -7,8 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class RepositoryTest {
 
     Repository repository = new Repository();
+
     @Test
-    void ShouldFindAll() {
+    void shouldFindAll() {
         Product[] actual = repository.findAll();
         Product[] expected = {
                 new Book(1, "name1", 100, "author1"),
@@ -20,11 +21,11 @@ class RepositoryTest {
                 new Smartphone(7, "name7", 700, "manufacturer7"),
                 new Smartphone(8, "name8", 800, "manufacturer8"),
         };
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
-    void ShouldSave() {
+    void shouldSave() {
         Product productToSave = new Book(9, "name9", 900, "author9");
         repository.save(productToSave);
         Product[] actual = repository.findAll();
@@ -39,11 +40,11 @@ class RepositoryTest {
                 new Smartphone(8, "name8", 800, "manufacturer8"),
                 new Book(9, "name9", 900, "author9"),
         };
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
-    void ShouldRemoveById() {
+    void shouldRemoveById() {
         repository.removeById(3);
         Product[] actual = repository.findAll();
         Product[] expected = {
@@ -55,6 +56,6 @@ class RepositoryTest {
                 new Smartphone(7, "name7", 700, "manufacturer7"),
                 new Smartphone(8, "name8", 800, "manufacturer8"),
         };
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected, actual);
     }
 }

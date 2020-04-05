@@ -21,17 +21,13 @@ public class Repository {
     };
 
     Product[] findAll() {
-        for (int i = 0; i < products.length; i++) {
-        }
         return products;
     }
 
     void save(Product product) {
         int length = products.length + 1;
         Product[] tmp = new Product[length];
-        for (int i = 0; i < products.length; i++) {
-            tmp[i] = products[i];
-        }
+        System.arraycopy(products, 0, tmp, 0, products.length);
         int lastIndex = tmp.length - 1;
         tmp[lastIndex] = product;
         products = tmp;

@@ -7,26 +7,26 @@ import static org.junit.jupiter.api.Assertions.*;
 class SmartphoneTest {
 
     @Test
-    void ShouldMatchByName() {
+    void shouldMatchByName() {
         Smartphone smartphone = new Smartphone(5, "name5", 500, "manufacturer5");
-        boolean actual = true;
-        boolean expected = smartphone.matches("name5");
+        boolean actual = smartphone.matches("name5");
+        boolean expected = true;
         assertEquals(actual, expected);
     }
 
     @Test
-    void ShouldMatchByManufacturer() {
+    void shouldMatchByManufacturer() {
         Smartphone smartphone = new Smartphone(6, "name6", 600, "manufacturer6");
-        boolean actual = true;
-        boolean expected = smartphone.matches("manufacturer6");
+        boolean actual = smartphone.matches("manufacturer6");
+        boolean expected = true;
         assertEquals(actual, expected);
     }
 
     @Test
-    void ShouldNotMatchByNotExistedValue() {
+    void shouldNotMatchByNotExistedValue() {
         Smartphone smartphone = new Smartphone(7, "name7", 700, "manufacturer7");
-        boolean actual = false;
-        boolean expected = smartphone.matches("@44");
+        boolean actual = smartphone.matches("@44");
+        boolean expected = false;
         assertEquals(actual, expected);
     }
 }
