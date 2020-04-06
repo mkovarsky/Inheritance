@@ -2,7 +2,8 @@ package ru.netology.domain;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class RepositoryTest {
 
@@ -44,7 +45,7 @@ class RepositoryTest {
     }
 
     @Test
-    void shouldRemoveById() {
+    void shouldRemoveByExistingId() {
         repository.removeById(3);
         Product[] actual = repository.findAll();
         Product[] expected = {
@@ -57,5 +58,11 @@ class RepositoryTest {
                 new Smartphone(8, "name8", 800, "manufacturer8"),
         };
         assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void shouldRemoveByNotExistingId() {
+        Repository repository = new Repository();
+        assertThrows(NotFoundException.class, () -> repository.removeById(15));
     }
 }
