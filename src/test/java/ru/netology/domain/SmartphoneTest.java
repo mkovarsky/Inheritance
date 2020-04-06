@@ -11,7 +11,7 @@ class SmartphoneTest {
         Smartphone smartphone = new Smartphone(5, "name5", 500, "manufacturer5");
         boolean actual = smartphone.matches("name5");
         boolean expected = true;
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -19,7 +19,7 @@ class SmartphoneTest {
         Smartphone smartphone = new Smartphone(6, "name6", 600, "manufacturer6");
         boolean actual = smartphone.matches("manufacturer6");
         boolean expected = true;
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -27,6 +27,6 @@ class SmartphoneTest {
         Smartphone smartphone = new Smartphone(7, "name7", 700, "manufacturer7");
         boolean actual = smartphone.matches("@44");
         boolean expected = false;
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 }
