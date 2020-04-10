@@ -1,13 +1,13 @@
-package ru.netology.domain;
+package ru.netology.manager;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import ru.netology.domain.Product;
+import ru.netology.repository.ProductRepository;
 
 @AllArgsConstructor
-@Data
-public class Manager {
+public class ProductManager {
 
-    private Repository repository;
+    private ProductRepository repository;
 
     public void addProductToRepository(Product product) {
         repository.save(product);

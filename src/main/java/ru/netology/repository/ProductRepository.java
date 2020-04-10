@@ -1,13 +1,11 @@
-package ru.netology.domain;
+package ru.netology.repository;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import ru.netology.domain.Book;
+import ru.netology.domain.Product;
+import ru.netology.domain.Smartphone;
+import ru.netology.exception.NotFoundException;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Repository {
+public class ProductRepository {
 
     Product[] products = {
             new Book(1, "name1", 100, "author1"),
@@ -20,7 +18,7 @@ public class Repository {
             new Smartphone(8, "name8", 800, "manufacturer8"),
     };
 
-    Product[] findAll() {
+    public Product[] findAll() {
         return products;
     }
 
@@ -33,7 +31,7 @@ public class Repository {
         return null;
     }
 
-    void save(Product product) {
+    public void save(Product product) {
         int length = products.length + 1;
         Product[] tmp = new Product[length];
         System.arraycopy(products, 0, tmp, 0, products.length);
@@ -42,7 +40,7 @@ public class Repository {
         products = tmp;
     }
 
-    void removeById(int id) {
+    public void removeById(int id) {
         if (findById(id) == null) {
             throw new NotFoundException("Element with id: " + id + " not found.");
         } else {
